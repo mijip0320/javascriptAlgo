@@ -7,18 +7,27 @@ var gcdOfStrings = function (str1, str2) {
     let b = str2.length
 
     // loop (divide) until you find the 
-    // highest common factor (length of string) 
+    // highest common factor (length of string)
     // like we did in maths
+    
+    // for (let i = 0; i < b; i++){
+    //        let temp = i
+    //     b = a % i
+    //     a = temp
+    // }
     while (b) {
+        
         let temp = b
         b = a % b
         a = temp
+
+        console.log(b)
     }
-    return str1.substring(0, a)
+    console.log(str1.substring(0, a));
   
 };
 
-gcdOfStrings('LEET','CODE')
+gcdOfStrings('ABCABC','ABC')
 
 // Input: str1 = "ABCABC", str2 = "ABC"
 // Output: "ABC"
