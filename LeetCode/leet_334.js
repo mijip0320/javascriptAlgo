@@ -46,7 +46,7 @@ var increasingTriplet2 = function (nums) {
         else if(third > second && third > first) return true;
     }
     // After the end of the loop if no such Increasing Triplet Subsequence indices exists then return false...
-    console.log(false);
+    return false;
 }
 
 const nums = [9,10,5,11,10,9,8];
