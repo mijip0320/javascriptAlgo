@@ -1,3 +1,4 @@
+//control+option+N
 //https://leetcode.com/problems/reverse-words-in-a-string/?envType=study-plan-v2&envId=leetcode-75
 
 //Approach : 
@@ -22,5 +23,5 @@ var reverseWords = function (s) {
     console.log(revStr)
 };
 
-const s = 'a good   example';
+const s = 'a good example';
 reverseWords(s);

@@ -59,9 +59,9 @@ var productExceptSelf2 = function(nums) {
     //console.log(answer);
 };
 
-const nums = [1, 2, 3, 4];
-// //Output: [24,12,8,6]
-productExceptSelf2(nums);
+// const nums = [1, 2, 3, 4];
+// // //Output: [24,12,8,6]
+// productExceptSelf2(nums);
 
 var productExceptSelf3 = function (nums) {
     const output = Array(nums.length).fill(1);
@@ -70,13 +70,22 @@ var productExceptSelf3 = function (nums) {
     for (let i = 0; i < nums.length; i++) {
         output[i] *= left;
         left *= nums[i];
+            console.log('left',left);
     }
-
     let right = 1;
+        console.log('out' ,output)
+
     for (let i = nums.length - 1; i >= 0; i--) {
         output[i] *= right;
         right *= nums[i];
+          console.log('right',right)
     }
+  
 
-    return output;    
+    console.log(output)
+
 }
+
+const nums = [1, 2, 3, 4];
+// //Output: [24,12,8,6]
+productExceptSelf3(nums);
