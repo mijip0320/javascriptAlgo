@@ -1,62 +1,39 @@
-var minSubArrayLen = function subarray(arr, num) {
-     
-    let maxNum = [...arr].sort((a,b) => a-b)[arr.length - 1];
-
-    if (maxNum >= num) {
-        console.log('1');
-        return;
+var minSubArrayLen = function subarray(arr, sum) {
+ //https://selonjulie.tistory.com/111    
+  let total = 0;
+  let start = 0;
+  let end = 0;
+  let minLen = Infinity;
+ 
+  while (start < arr.length) {
+    // if current window doesn't add up to the given sum then 
+		// move the window to right
+    if(total < sum && end < nums.length){
+      total += nums[end];
+	  end++;
     }
-    // console.log(arr.indexOf(maxNum));
-    let maxIndex = arr.indexOf(maxNum);
-
-    let i = maxIndex !== 0 ? maxIndex - 1 : 0;
-    let j = maxIndex;
-    let tempMax =  maxNum;
-    while (i >= 0 && j < arr.length) {
-            
-        if (maxIndex !== 0) {
-            j = j === maxIndex ? maxIndex + 1 : j;
-            
-            
-            if (arr[i] > arr[j]) {
-                tempMax += arr[i];
-            } else {
-                tempMax += arr[j];
-            }
-
-            if (tempMax >= num) {
-                console.log(j - i + 1);
-                return;
-            }
-
-            i--;
-            j++;
-              
-            
-        } else {
-             j = j === 0 ? 1 : j
-            let tempMax = maxNum + arr[j];
-            if (tempMax >= num) {
-                console.log(j);
-                return;
-            }
-             j++;
-        }
-
-        
-
-        
+    // if current window adds up to at least the sum given then
+		// we can shrink the window 
+    else if(total >= sum){
+      minLen = Math.min(minLen, end-start);
+	  total -= nums[start];
+	  start++;
+    } 
+    // current total less than required total but we reach the end, need this or else we'll be in an infinite loop 
+    else {
+      break;
     }
-
-    //console.log(j-i);
+  }
+ 
+  return minLen === Infinity ? 0 : minLen;
 
 }
 
 // minSubArrayLen([2,3,1,2,4,3], 7) // 2 -> because [4,3] is the smallest subarray
 // minSubArrayLen([2,1,6,5,4], 9) // 2 -> because [5,4] is the smallest subarray
 // minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52) // 1 -> because [62] is greater than 52
-// minSubArrayLen([1,4,16,22,5,7,8,9,10],39) // 3
- minSubArrayLen([1,4,16,22,5,7,8,9,10],55) // 5
+ minSubArrayLen([1,4,16,22,5,7,8,9,10],39) // 3
+// minSubArrayLen([1,4,16,22,5,7,8,9,10],55) // 5
 // minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11) // 2
 // minSubArrayLen([1,4,16,22,5,7,8,9,10],95) // 0
 
