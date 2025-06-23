@@ -5,7 +5,7 @@ var seperate = function separateNumbers(s) {
   let subStr = "";
   for (let i = 1; i <= Math.floor(len / 2); i++) {
     subStr = s.substring(0, i); // 시작 숫자 문자열
-    let firstNumStr = Number(subStr); // 시작 숫자
+    let firstNumStr = BigInt(subStr); // 시작 숫자, 큰 숫자들도 변환할 수 있게끔 BigInt 사용
     let currentNum = firstNumStr;
     let temp = "";
 
