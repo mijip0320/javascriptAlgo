@@ -9,18 +9,12 @@ var seperate = function separateNumbers(s) {
     let currentNum = firstNumStr;
     let temp = "";
 
-    // console.log(
-    //   `\n--- 시도: 시작 숫자 길이 = ${i}, firstNumStr = '${firstNumStr}' ---`
-    // );
-
     while (temp.length < len) {
-      //   console.log(`temp에 '${currentNum}' 추가`);
       //첫 숫자 입력 후 while문 돌면서 1씩 증가된 숫자들을 string으로 붙임
       temp += currentNum.toString(); // 숫자 시퀀스를 이어붙임
       currentNum++; // 다음 숫자로 증가
     }
 
-    // console.log(`최종 temp: '${temp}'`);
     //temp로 만들어진 최종 string값과 처음에 입력된 s가 같아야 1씩 증가하는 string값이 됨
     if (temp === s) {
       console.log(`YES ${firstNumStr}`);
