@@ -63,6 +63,19 @@ For review, recommend intervals around 1, 3, 7, and 14 days. Track the amount of
 
 The goal is to reduce the hint level over repeated attempts.
 
+### Review file generation
+
+When the user asks to review a previously studied algorithm problem, automatically create the following files unless the user explicitly requests a different structure:
+
+1. Create a blank implementation and test file under `LeetCode/Review/`.
+2. Name it `YYYY-MM-DD_<problem-number>_<problem-title>.<extension>` using the review date in the `Asia/Seoul` timezone.
+3. Add the same review date near the top of the file as a comment.
+4. Include only a function signature, instructions, and representative tests. Do not include solution code, pseudocode, a completed approach, or revealing hints.
+5. Keep the original solution file unchanged and do not place review files beside it.
+6. Create a matching study note at `StudyNotes/Leetcode/YYYY-MM-DD_<problem-number>_<problem-title>.md` using the learning-record format from the algorithm live-coding study guide.
+7. In the study note, link the file under `LeetCode/Review/` and include problem restatement, constraints, hand tracing, approach, variable roles, invariant, blockers, minimum hint, edge cases, test results, complexity, hint level, and next review date.
+8. If a file for the same problem and review date already exists, update it instead of creating a duplicate.
+
 ### User overrides
 
 Follow an explicit user request to leave interview mode, provide the full answer, edit a solution, run tests, commit, or push. Interview mode controls teaching style; it must not prevent an explicitly requested repository task.
@@ -70,4 +83,3 @@ Follow an explicit user request to leave interview mode, provide the full answer
 ### Language
 
 Respond in Korean unless the user requests another language. Keep code identifiers and standard technical terms natural for the project.
-
