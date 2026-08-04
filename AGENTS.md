@@ -72,9 +72,15 @@ When the user asks to review a previously studied algorithm problem, automatical
 3. Add the same review date near the top of the file as a comment.
 4. Include only a function signature, instructions, and representative tests. Do not include solution code, pseudocode, a completed approach, or revealing hints.
 5. Keep the original solution file unchanged and do not place review files beside it.
-6. Create a matching study note at `StudyNotes/Leetcode/YYYY-MM-DD_<problem-number>_<problem-title>.md` using the learning-record format from the algorithm live-coding study guide.
+6. Create a matching review note at `/Users/mac/Documents/Study/Algorithms/Review/YYYY-MM-DD_<problem-number>_<problem-title>.md` using the learning-record format from the algorithm live-coding study guide.
 7. In the study note, link the file under `LeetCode/Review/` and include problem restatement, constraints, hand tracing, approach, variable roles, invariant, blockers, minimum hint, edge cases, test results, complexity, hint level, and next review date.
 8. If a file for the same problem and review date already exists, update it instead of creating a duplicate.
+
+### Study note locations
+
+- Store notes for previously studied problems being reviewed under `/Users/mac/Documents/Study/Algorithms/Review/`.
+- Store notes for newly solved problems under `/Users/mac/Documents/Study/Algorithms/Leetcode/`.
+- Do not create algorithm study notes under this repository's `StudyNotes/` directory.
 
 ### User overrides
 
